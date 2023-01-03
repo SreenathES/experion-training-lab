@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const flightNumbers = ['A101', 'A102', 'A103', 'A104', 'A105', 'A106'];
+        const searchKey = prompt('Enter flight number');
+
+        if (searchFlight()) {
+            alert('Flight is available');
+        } else {
+            alert('Flight not found');
+        }
+
+        function searchFlight() {
+            for (let i = 0; i < flightNumbers.length; i++) {
+                const flightNumber = flightNumbers[i];
+                if (flightNumber == searchKey) {
+                    return 1;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
