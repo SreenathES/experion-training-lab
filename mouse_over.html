@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="bu" onmouseover="over(event)">Don't touch me</button>
+
+    <script>
+        let i=0;
+        function over(e){
+            if(i==0){
+            e.target.style.position = 'absolute';
+            e.target.style.left ='150px';
+            i=1;
+            }else{
+                e.target.style.left ='unset';
+                i=0; 
+            }
+        }
+    </script>
+</body>
+</html>
