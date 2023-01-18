@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-md-4 col-sm-6">
+                <form name="flightDetails" onsubmit="insertValuesInToArray(event)">
+                    <div class="mb-3">
+                        <label for="flightFare" class="form-label">Flight Fare:</label>
+                        <input type="number" required step=".001" class="form-control" id="flightFare" name="flightFare" placeholder="Enter flight fare">
+                    </div>
+                    <div class="mb-3">
+                        <label for="destination" class="form-label">Flight Destination:</label>
+                        <input type="text" required class="form-control" id="destination" name="destination" placeholder="Enter flight destination">
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 col-sm-6 ms-auto">
+                <form name="fareAndDestination" onsubmit="searchFareAndDestination(event)">
+                    <div class="mb-3">
+                        <label for="searchKey" class="form-label">Enter nth number of keyboard</label>
+                        <input type="number" required class="form-control" id="searchKey" name="searchKey">
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-secondary">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 text-center" id="result"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
