@@ -82,7 +82,11 @@ function lengthOfNames() {
     showData();
     textArea.innerText = 'Length of each element';
     passengers.forEach(element => {
-        content.innerHTML += `<p>${element} : <strong>${element.length}</strong></p>`;
+        let i = 0;
+        for (const key in element) {
+            i++;
+        }
+        content.innerHTML += `<p>${element} : <strong>${i}</strong></p>`;
     });
 }
 
