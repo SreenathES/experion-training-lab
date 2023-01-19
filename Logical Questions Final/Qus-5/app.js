@@ -1,13 +1,23 @@
 const fares = [];
 const content = document.getElementById('content');
 const tbody = document.getElementById('tableBody');
-let position = parseInt((prompt('Which position you want to insert element (input 0 for event positions, 1 for odd positions)')));
+// let position = parseInt((prompt('Which position you want to insert element (input 0 for event positions, 1 for odd positions)')));
+let even = 0;
+let odd = 1;
 
 function insertValuesInToArray(e) {
     e.preventDefault();
-    const fare = parseFloat(document.forms.fareInput.fare.value).toFixed(2);
-    fares[position] = fare;
-    position = position + 2;
+    const fare = parseFloat(document.forms.fareInput.fare.value);
+    const lastDigit = (fare.toFixed(2) * 100) % 10;
+
+    if (lastDigit % 2 === 0) {
+        fares[even] = fare;
+        even += 2;
+    } else {
+        fares[odd] = fare;
+        odd += 2;
+    }
+    alert('fare inserted');
 }
 
 function showContent() {
