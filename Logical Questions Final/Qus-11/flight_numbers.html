@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-md-4 col-sm-6 offset-sm-3 offset-md-4">
+                <div class="mb-3">
+                    <label for="alphabet" class="form-label">Input an alphabet</label>
+                    <input type="text" class="form-control" name="alphabet" id="alphabet">
+                </div>
+                <div class="mb-3">
+                    <label for="limit" class="form-label">Input number of items</label>
+                    <input type="number" class="form-control" name="limit" id="limit">
+                </div>
+                <div>
+                    <button class="btn btn-primary" onclick="printRange(event)" value="1">Odd range</button>
+                    <button class="btn btn-secondary" onclick="printRange(event)" value="2">Event range</button>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-3" id="resultDisplay"></div>
+        <hr>
+        <div class="text-center mt-3" id="primeNumbers"></div>
+        <hr>
+        <div class="text-center mt-3" id="fibonacci"></div>
+        <hr>
+        <div class="text-center mt-3" id="armstrong"></div>
+        <script src="script.js"></script>
+</body>
+
+</html>
