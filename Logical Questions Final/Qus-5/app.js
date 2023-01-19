@@ -7,10 +7,9 @@ let odd = 1;
 
 function insertValuesInToArray(e) {
     e.preventDefault();
-    const fare = parseFloat(document.forms.fareInput.fare.value);
-    const lastDigit = (fare.toFixed(2) * 100) % 10;
+    const fare = parseInt(document.forms.fareInput.fare.value);
 
-    if (lastDigit % 2 === 0) {
+    if (fare % 2 === 0) {
         fares[even] = fare;
         even += 2;
     } else {
