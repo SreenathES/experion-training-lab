@@ -21,14 +21,14 @@ function mergeArray() {
 
     passengerNames.forEach((passengerName) => {
         mergedArray[i] = passengerName;
-        i++;
+        i += 2;
     });
 
-    let length = mergedArray.length;
-    
+    i = 1;
+
     destinations.forEach((destination) => {
-        mergedArray[length] = destination;
-        length++;
+        mergedArray[i] = destination;
+        i += 2;
     });
 
     resultDisplay.innerHTML = `<p>${passengerNames}</p><p>${destinations}</p><p>${mergedArray}</p>`;
