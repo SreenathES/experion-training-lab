@@ -1,37 +1,53 @@
 let q = [[], [], []];
-let boardingPass = [];
-let lengthOfArray = boardingPass.length;
-let position = 0;
+let boardingPass = 0;
 let count = document.getElementById('count');
 let countValue = parseInt(count.innerText);
 let queueDisplay = document.getElementById('queueDisplay');
+let j = 0;
+let queueNumber = 0;
+let passengerCount = 0;
 
 function insertBoardingPass(e) {
     e.preventDefault();
 
-    if (boardingPass.length < 10) {
+    if (passengerCount < 10) {
         countValue = countValue - 1;
         count.innerText = countValue;
         let boardingPassNumber = document.forms.boardingPass.boardingPassNumber.value;
-        boardingPass.push(boardingPassNumber);
+
+        if (queueNumber < 3) {
+            if (q[queueNumber].length === 3) {
+                queueNumber += 1;
+            }
+            if (queueNumber !== 3) {
+                q[queueNumber].push(boardingPassNumber);
+                j += 1;
+            } else {
+                boardingPass = boardingPassNumber;
+            }
+        }
+        passengerCount += 1;
     }
 }
 
-function allocateToQueue() {
-    if (boardingPass.length != 0) {
-        for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 3; j++) {
-                q[j][i] = boardingPass[position];
-                position++;
-            }
-        }
-
+function displayQueue() {
+    queueDisplay.innerHTML = '';
+    if (q.length != 0) {
         q.forEach((element, index) => {
             queueDisplay.innerHTML += `<p>Q${index + 1} : ${element[0]}     ${element[1]}     ${element[2]}</p>`;
         });
-
-        console.log(q);
+        queueChange();
     }
+}
+
+function queueChange() {
+    let random = Math.floor(Math.random() * 2);
+    queueDisplay.innerHTML += `<p class="fw-bold">Q${random + 1} after ${q[random][0]} left</p>`;
+    q[random].shift();
+    q[random].push(boardingPass);
+    q.forEach((element, index) => {
+        queueDisplay.innerHTML += `<p>Q${index + 1} : ${element[0]}     ${element[1]}     ${element[2]}</p>`;
+    });
 }
 
 // boardingPass.forEach(element => {
